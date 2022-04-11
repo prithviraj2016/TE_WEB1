@@ -10,5 +10,6 @@ export class ManageStaffComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  removeStaffAction(){}
+  addStaffAction(){}
 }

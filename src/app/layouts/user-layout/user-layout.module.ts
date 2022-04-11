@@ -1,3 +1,4 @@
+import { TournamentCreateComponent } from 'src/app/users/tournament-create/tournament-create.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
@@ -24,6 +25,8 @@ import { TeamsComponent } from 'src/app/users/teams/teams.component';
 import { ProfileComponent } from 'src/app/users/profile/profile.component';
 import { SlideToggleModule } from 'ngx-slide-toggle';
 import { EventCreateComponent } from 'src/app/users/event-create/event-create.component';
+import { SeasonCreateComponent } from 'src/app/users/season-create/season-create.component';
+import { TeamCreateComponent } from 'src/app/users/team-create/team-create.component';
 
 // import { IconImportModule } from 'mat-icon-import';
 //import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
@@ -58,12 +61,12 @@ import { EventCreateComponent } from 'src/app/users/event-create/event-create.co
     SeasonsComponent,
     TeamsComponent,
     ProfileComponent,
-    EventCreateComponent
-    // SeasonCreateComponent,
-    //  SeasonsComponent,
-    //   TeamsComponent,
-    // TeamCreateComponent,
-    
+    EventCreateComponent,
+    SeasonCreateComponent,
+    SeasonsComponent,
+    TeamsComponent,
+    TeamCreateComponent,
+    TournamentCreateComponent
     // ManageStaffComponent,
     // PoolsComponent
   ],

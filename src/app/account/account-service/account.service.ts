@@ -11,7 +11,14 @@ import { ServerConstant } from 'src/app/common/server-constant';
   })
 
 
-  export class AccountService {
+export class AccountService {
+    httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'api-version':'TE_Web_1.0'
+      })
+    }
+
 
     constructor(private http: HttpClient) {
 
@@ -23,34 +30,32 @@ import { ServerConstant } from 'src/app/common/server-constant';
         "password": signin.Password
       };
 
-      const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json','api-version':'TE_Web_1.0'}) };
-      return this.http.post<[]>(ServerConstant.apiUrl + 'services/network/login',
-      signinObj, httpOptions);
+      
+      return this.http.post<[]>(ServerConstant.apiUrl + 'services/network/login',signinObj, this.httpOptions);
     }
     LogoutUser(): Observable<[]> {
 
-      const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
-      return this.http.get<[]>(ServerConstant.apiUrl + '/network/logout',httpOptions);
+     return this.http.get<[]>(ServerConstant.apiUrl + '/network/logout',this.httpOptions);
 
     }
     Signup(signupObj:any): Observable<[]> {
 
-      const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json','api-version':'TE_Web_1.0'}) };
-      return this.http.post<[]>(ServerConstant.apiUrl + 'services/network/user/register',signupObj,httpOptions);
+    
+      return this.http.post<[]>(ServerConstant.apiUrl + 'services/network/user/register',signupObj,this.httpOptions);
 
     }
     ForgetPassword(email:string): Observable<[]> {
-     const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
-      return this.http.get<[]>(ServerConstant.apiUrl + 'unauthenticated/user/reset/password?username='+email,httpOptions);
+    
+      return this.http.get<[]>(ServerConstant.apiUrl + 'unauthenticated/user/reset/password?username='+email,this.httpOptions);
 
     }
     updateProfile(id:any, userObj:any){
-      const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
-      return this.http.put<[]>(ServerConstant.apiUrl + 'services/network/user/update/profile'+id +userObj,httpOptions);
+     
+      return this.http.put<[]>(ServerConstant.apiUrl + 'services/network/user/update/profile'+id +userObj,this.httpOptions);
     }
     userProfile(id:String){
-      const httpOptions = { headers: new HttpHeaders({ 'Content-Type': 'application/json'}) };
-      return this.http.get<[]>(ServerConstant.apiUrl + 'services/network/user/profile'+id,httpOptions);
+     
+      return this.http.get<[]>(ServerConstant.apiUrl + 'services/network/user/profile'+id,this.httpOptions);
     }
 
   }

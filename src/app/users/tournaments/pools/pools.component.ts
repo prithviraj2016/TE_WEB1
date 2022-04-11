@@ -10,5 +10,16 @@ export class PoolsComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  StartRoundRobinHelp(){}
+  showScoreboardRS(){}
+  resetPool(){}
+  toggleExpandScreen(){}
+  launchFullscreen(){}
+  showMixer(){}
+  openManagePlayer(){}
+  ToggleSwapMode(){}
+  startTournament(){}
+  PrintRoundScreen(){}
+  spotClicked(){}
+  
 }

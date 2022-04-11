@@ -24,6 +24,8 @@ import { httpInterceptorProviders } from './shared/services/httpInterceptorProvi
 
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,11 +33,6 @@ import { httpInterceptorProviders } from './shared/services/httpInterceptorProvi
     SignUpComponent,
     HomeLayoutComponent,
     UserLayoutComponent,
-    
-   
-    
-
-
   ],
   imports: [
     BrowserModule,
